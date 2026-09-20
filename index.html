@@ -399,20 +399,27 @@ function loadSubjects(){
 }
 
 function showNotes(){
-document.getElementById("studyArea").innerHTML = `
-        <h3>📚 ${item[0]}</h3>
+function showNotes(){
+    document.getElementById("studyArea").innerHTML = `
+        <h3>📖 Mathematics Notes</h3>
 
-        <p style="margin-top:12px;">
-        Topic: ${item[1]}
+        <h4 style="margin-top:12px;">Algebra</h4>
+
+        <p style="margin-top:10px;">
+        Algebra uses letters and numbers to represent unknown values.
         </p>
 
         <p style="margin-top:10px;">
-        Select an option below to continue studying.
+        Example:<br>
+        3x + 5 = 20<br>
+        3x = 15<br>
+        x = 5
         </p>
 
-        <button class="action" onclick="showNotes()">
-        📖 Read Notes
-        </button>
+        <p style="margin-top:10px;">
+        Remember: whatever operation you perform on one side of an
+        equation should also be performed on the other side.
+        </p>
 
         <button class="action" onclick="startQuiz()">
         📝 Take Quiz
@@ -421,8 +428,6 @@ document.getElementById("studyArea").innerHTML = `
         <button class="action" onclick="showPractice()">
         ✏️ Practice Questions
         </button>
-    `;
-    
     `;
 }
 
