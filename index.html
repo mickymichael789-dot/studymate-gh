@@ -399,26 +399,30 @@ function loadSubjects(){
 }
 
 function showNotes(){
-
-    document.getElementById("studyArea").innerHTML = `
-        <h3>📖 Study Notes</h3>
+document.getElementById("studyArea").innerHTML = `
+        <h3>📚 ${item[0]}</h3>
 
         <p style="margin-top:12px;">
-        Good study habits help students understand and remember
-        what they learn.
+        Topic: ${item[1]}
         </p>
 
         <p style="margin-top:10px;">
-        1. Read the topic carefully.<br>
-        2. Write down important points.<br>
-        3. Ask questions when you do not understand.<br>
-        4. Practice what you have learned.<br>
-        5. Revise regularly.
+        Select an option below to continue studying.
         </p>
 
-        <button class="action" onclick="completeTopic()">
-        Mark Topic Complete
+        <button class="action" onclick="showNotes()">
+        📖 Read Notes
         </button>
+
+        <button class="action" onclick="startQuiz()">
+        📝 Take Quiz
+        </button>
+
+        <button class="action" onclick="showPractice()">
+        ✏️ Practice Questions
+        </button>
+    `;
+    
     `;
 }
 
