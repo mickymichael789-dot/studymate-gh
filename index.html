@@ -128,14 +128,13 @@ header p{
 
         <div class="levels">
 
-            <button class="level-btn active">
-                JHS
-            </button>
+            <button class="level-btn active" onclick="showJHS()">
+    JHS
+</button>
 
-            <button class="level-btn">
-                SHS
-            </button>
-
+<button class="level-btn" onclick="showSHS()">
+    SHS
+</button>
         </div>
 
     </div>
@@ -214,6 +213,145 @@ header p{
 
 </div>
 
+<script>
+
+function showJHS(){
+
+    document.querySelector(".level-btn:nth-child(1)")
+        .classList.add("active");
+
+    document.querySelector(".level-btn:nth-child(2)")
+        .classList.remove("active");
+
+    document.querySelector(".section h2:nth-child(1)");
+
+    document.querySelector(".section:nth-child(2) h2")
+        .textContent = "JHS Subjects";
+
+    document.querySelector(".subjects").innerHTML = `
+
+        <div class="subject">
+            <h3>English Language</h3>
+            <p>Parts of Speech</p>
+        </div>
+
+        <div class="subject">
+            <h3>Mathematics</h3>
+            <p>Algebra</p>
+        </div>
+
+        <div class="subject">
+            <h3>Integrated Science</h3>
+            <p>Living Things</p>
+        </div>
+
+        <div class="subject">
+            <h3>Social Studies</h3>
+            <p>Ghana and Citizenship</p>
+        </div>
+
+        <div class="subject">
+            <h3>Computing</h3>
+            <p>Computer Basics</p>
+        </div>
+
+        <div class="subject">
+            <h3>RME</h3>
+            <p>Moral Values</p>
+        </div>
+
+        <div class="subject">
+            <h3>French</h3>
+            <p>Basic French</p>
+        </div>
+
+        <div class="subject">
+            <h3>Ghanaian Language</h3>
+            <p>Reading and Writing</p>
+        </div>
+
+    `;
+}
+
+
+function showSHS(){
+
+    document.querySelector(".level-btn:nth-child(1)")
+        .classList.remove("active");
+
+    document.querySelector(".level-btn:nth-child(2)")
+        .classList.add("active");
+
+    document.querySelector(".section:nth-child(2) h2")
+        .textContent = "SHS Subjects";
+
+    document.querySelector(".subjects").innerHTML = `
+
+        <div class="subject">
+            <h3>English Language</h3>
+            <p>Comprehension</p>
+        </div>
+
+        <div class="subject">
+            <h3>Core Mathematics</h3>
+            <p>Quadratic Equations</p>
+        </div>
+
+        <div class="subject">
+            <h3>Integrated Science</h3>
+            <p>Cells</p>
+        </div>
+
+        <div class="subject">
+            <h3>Social Studies</h3>
+            <p>Governance</p>
+        </div>
+
+        <div class="subject">
+            <h3>ICT</h3>
+            <p>Information Systems</p>
+        </div>
+
+        <div class="subject">
+            <h3>Economics</h3>
+            <p>Demand and Supply</p>
+        </div>
+
+        <div class="subject">
+            <h3>Biology</h3>
+            <p>Living Things</p>
+        </div>
+
+        <div class="subject">
+            <h3>Chemistry</h3>
+            <p>Matter and Chemical Reactions</p>
+        </div>
+
+        <div class="subject">
+            <h3>Physics</h3>
+            <p>Force and Motion</p>
+        </div>
+
+        <div class="subject">
+            <h3>Geography</h3>
+            <p>Map Reading</p>
+        </div>
+
+        <div class="subject">
+            <h3>Government</h3>
+            <p>Ghanaian Government</p>
+        </div>
+
+        <div class="subject">
+            <h3>Literature</h3>
+            <p>Literary Appreciation</p>
+        </div>
+
+    `;
+}
+
+</script>
+
 </body>
 
-    </html>
+</html>
