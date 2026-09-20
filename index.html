@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>StudyMate GH</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -31,7 +33,6 @@ header h1{
 
 header p{
     margin-top:6px;
-    opacity:.9;
 }
 
 .container{
@@ -61,33 +62,11 @@ header p{
     background:white;
     font-size:17px;
     font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .level-btn.active{
     background:#087f3f;
     color:white;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.stat{
-    background:white;
-    padding:18px;
-    border-radius:14px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.07);
-}
-
-.stat strong{
-    display:block;
-    font-size:25px;
-    color:#087f3f;
 }
 
 .subjects{
@@ -100,7 +79,6 @@ header p{
     background:white;
     padding:18px;
     border-radius:14px;
-    cursor:pointer;
     box-shadow:0 2px 8px rgba(0,0,0,.07);
 }
 
@@ -113,24 +91,6 @@ header p{
     font-size:14px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:14px;
-    cursor:pointer;
-    box-shadow:0 2px 8px rgba(0,0,0,.07);
-}
-
-.card h3{
-    margin-bottom:6px;
-}
-
 .study-area{
     background:white;
     padding:20px;
@@ -138,496 +98,92 @@ header p{
     box-shadow:0 2px 8px rgba(0,0,0,.07);
 }
 
-button.action{
-    margin-top:12px;
-    padding:12px 18px;
-    border:none;
-    border-radius:9px;
-    background:#087f3f;
-    color:white;
-    cursor:pointer;
-}
-
-footer{
-    text-align:center;
-    padding:25px;
-    color:#68756d;
-}
-
 @media(max-width:600px){
-    .subjects,
-    .cards{
+
+    .subjects{
         grid-template-columns:1fr;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
     <h1>📚 StudyMate GH</h1>
+
     <p>Learn • Practice • Improve</p>
+
 </header>
 
 <div class="container">
 
     <div class="section">
+
         <h2>Choose your level</h2>
 
         <div class="levels">
-            <button class="level-btn active" onclick="setLevel('JHS',this)">
+
+            <button class="level-btn active">
                 JHS
             </button>
 
-            <button class="level-btn" onclick="setLevel('SHS',this)">
+            <button class="level-btn">
                 SHS
             </button>
+
         </div>
+
     </div>
 
     <div class="section">
-        <h2>My Progress</h2>
 
-        <div class="stats">
-            <div class="stat">
-                <strong id="topics">0</strong>
-                Topics Studied
+        <h2>JHS Subjects</h2>
+
+        <div class="subjects">
+
+            <div class="subject">
+
+                <h3>English Language</h3>
+
+                <p>Parts of Speech</p>
+
             </div>
 
-            <div class="stat">
-                <strong id="attempts">0</strong>
-                Quiz Attempts
-            </div>
+            <div class="subject">
 
-            <div class="stat">
-                <strong id="best">0%</strong>
-                Best Score
-            </div>
+                <h3>Mathematics</h3>
 
-            <div class="stat">
-                <strong id="streak">1</strong>
-                Study Streak
-            </div>
-        </div>
-    </div>
+                <p>Algebra</p>
 
-    <div class="section">
-        <h2 id="levelTitle">JHS Subjects</h2>
-
-        <div class="subjects" id="subjects"></div>
-    </div>
-
-    <div class="section">
-        <h2>Quick Study</h2>
-
-        <div class="cards">
-
-            <div class="card" onclick="showNotes()">
-                <h3>📖 Notes</h3>
-                <p>Read simple topic notes.</p>
-            </div>
-
-            <div class="card" onclick="startQuiz()">
-                <h3>📝 Quiz</h3>
-                <p>Test your knowledge.</p>
-            </div>
-
-            <div class="card" onclick="showPractice()">
-                <h3>✏️ Practice</h3>
-                <p>Practice important questions.</p>
-            </div>
-
-            <div class="card" onclick="showPlanner()">
-                <h3>📅 Planner</h3>
-                <p>Plan your revision.</p>
             </div>
 
         </div>
+
     </div>
 
     <div class="section">
+
         <h2>Study Area</h2>
 
-        <div class="study-area" id="studyArea">
+        <div class="study-area">
+
             <h3>Welcome to StudyMate GH 👋</h3>
+
             <p style="margin-top:8px;">
-                Select a subject or choose one of the study tools above.
+                Select a subject to start studying.
             </p>
+
         </div>
+
     </div>
 
 </div>
 
-<footer>
-    StudyMate GH © 2026
-</footer>
-
-<script>
-
-let level = "JHS";
-
-let data = {
-    JHS: [
-    ["English Language","Parts of Speech"],
-    ["Mathematics","Algebra"],
-    ["Integrated Science","Living Things"],
-    ["Social Studies","Ghana and Citizenship"],
-    ["Computing","Computer Basics"],
-    ["RME","Moral Values"],
-    ["French","Basic French"],
-    ["Ghanaian Language","Reading and Writing"]
-],
-
-    SHS: [
-    ["English Language","Comprehension"],
-    ["Core Mathematics","Quadratic Equations"],
-    ["Integrated Science","Cells"],
-    ["Social Studies","Governance"],
-    ["ICT","Information Systems"],
-    ["Economics","Demand and Supply"],
-    ["Biology","Living Things"],
-    ["Chemistry","Matter and Chemical Reactions"],
-    ["Physics","Force and Motion"],
-    ["Geography","Map Reading"],
-    ["Government","Ghanaian Government"],
-    ["Literature","Literary Appreciation"]
-],
-    
-};
-
-let progress = JSON.parse(
-    localStorage.getItem("studymate-gh")
-) || {
-    topics:0,
-    attempts:0,
-    best:0,
-    streak:1
-};
-
-function save(){
-    localStorage.setItem(
-        "studymate-gh",
-        JSON.stringify(progress)
-    );
-}
-
-function updateStats(){
-
-    document.getElementById("topics").textContent =
-        progress.topics;
-
-    document.getElementById("attempts").textContent =
-        progress.attempts;
-
-    document.getElementById("best").textContent =
-        progress.best + "%";
-
-    document.getElementById("streak").textContent =
-        progress.streak;
-}
-
-function setLevel(newLevel,button){
-
-    level = newLevel;
-
-    document.querySelectorAll(".level-btn")
-        .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    document.getElementById("levelTitle").textContent =
-        newLevel + " Subjects";
-
-    loadSubjects();
-}
-
-function loadSubjects(){
-
-    let container =
-        document.getElementById("subjects");
-
-    container.innerHTML = "";
-
-    data[level].forEach(item => {
-
-        let div = document.createElement("div");
-
-        div.className = "subject";
-
-        div.innerHTML =
-            "<h3>" + item[0] + "</h3>" +
-            "<p>" + item[1] + "</p>";
-
-        div.onclick = function(){
-
-            progress.topics++;
-            save();
-            updateStats();
-
-            document.getElementById("studyArea").innerHTML =
-
-"<h3>📚 " + item[0] + "</h3>" +
-
-"<p style='margin-top:10px;'>" +
-"Topic: " + item[1] +
-"</p>" +
-
-"<p style='margin-top:10px;'>" +
-"Choose what you want to do:" +
-"</p>" +
-
-"<button class='action' onclick='showNotes()'>" +
-"📖 Read Notes" +
-"</button>" +
-
-"<br>" +
-
-"<button class='action' onclick='startQuiz()'>" +
-"📝 Take Quiz" +
-"</button>" +
-
-"<br>" +
-
-"<button class='action' onclick='showPractice()'>" +
-"✏️ Practice Questions" +
-"</button>";
-        };
-
-        container.appendChild(div);
-    });
-}
-
-function showNotes(){
-function showNotes(){
-    document.getElementById("studyArea").innerHTML = `
-        <h3>📖 Mathematics Notes</h3>
-
-        <h4 style="margin-top:12px;">Algebra</h4>
-
-        <p style="margin-top:10px;">
-        Algebra uses letters and numbers to represent unknown values.
-        </p>
-
-        <p style="margin-top:10px;">
-        Example:<br>
-        3x + 5 = 20<br>
-        3x = 15<br>
-        x = 5
-        </p>
-
-        <p style="margin-top:10px;">
-        Remember: whatever operation you perform on one side of an
-        equation should also be performed on the other side.
-        </p>
-
-        <button class="action" onclick="startQuiz()">
-        📝 Take Quiz
-        </button>
-
-        <button class="action" onclick="showPractice()">
-        ✏️ Practice Questions
-        </button>
-    `;
-}
-
-function completeTopic(){
-
-    progress.topics++;
-    save();
-    updateStats();
-
-    alert("Topic completed! 🎉");
-}
-
-function startQuiz(){
-
-    let questions = [
-
-        {
-            q:"What is 5 × 6?",
-            a:["20","25","30","35"],
-            correct:2
-        },
-
-        {
-            q:"Which organ pumps blood around the body?",
-            a:["Lungs","Heart","Kidney","Brain"],
-            correct:1
-        },
-
-        {
-            q:"What is the capital city of Ghana?",
-            a:["Kumasi","Tema","Accra","Tamale"],
-            correct:2
-        },
-
-        {
-            q:"Which word is a noun?",
-            a:["Run","Beautiful","School","Quickly"],
-            correct:2
-        },
-
-        {
-            q:"Which device is mainly used for typing?",
-            a:["Monitor","Keyboard","Speaker","Printer"],
-            correct:1
-        }
-
-    ];
-
-    let html = "<h3>📝 Quiz</h3>";
-
-    questions.forEach((item,index)=>{
-
-        html += `
-        <div style="margin-top:18px;">
-            <strong>${index+1}. ${item.q}</strong>
-            <div style="margin-top:8px;">
-        `;
-
-        item.a.forEach((answer,i)=>{
-
-            html += `
-            <label style="display:block;margin:7px 0;">
-                <input type="radio"
-                name="q${index}"
-                value="${i}">
-                ${answer}
-            </label>
-            `;
-
-        });
-
-        html += "</div></div>";
-
-    });
-
-    html += `
-        <button class="action" onclick="submitQuiz()">
-            Submit Quiz
-        </button>
-    `;
-
-    document.getElementById("studyArea").innerHTML = html;
-}
-
-function submitQuiz(){
-
-    let questions = [
-        2,
-        1,
-        2,
-        2,
-        1
-    ];
-
-    let score = 0;
-
-    questions.forEach((correct,index)=>{
-
-        let selected =
-            document.querySelector(
-                'input[name="q'+index+'"]:checked'
-            );
-
-        if(selected &&
-           Number(selected.value) === correct){
-
-            score++;
-        }
-
-    });
-
-    let percentage =
-        Math.round((score/questions.length)*100);
-
-    progress.attempts++;
-
-    if(percentage > progress.best){
-        progress.best = percentage;
-    }
-
-    save();
-    updateStats();
-
-    document.getElementById("studyArea").innerHTML = `
-        <h3>🎉 Quiz Complete!</h3>
-
-        <p style="margin-top:10px;">
-        You scored <strong>${score}/${questions.length}</strong>
-        </p>
-
-        <p style="margin-top:8px;">
-        Score: <strong>${percentage}%</strong>
-        </p>
-
-        <button class="action" onclick="startQuiz()">
-            Try Again
-        </button>
-    `;
-}
-
-function showPractice(){
-
-    document.getElementById("studyArea").innerHTML = `
-        <h3>✏️ Practice Questions</h3>
-
-        <p style="margin-top:12px;">
-        1. Solve: 3x + 5 = 20.
-        </p>
-
-        <p style="margin-top:12px;">
-        2. State two functions of the heart.
-        </p>
-
-        <p style="margin-top:12px;">
-        3. State two responsibilities of a good citizen.
-        </p>
-
-        <p style="margin-top:12px;">
-        4. Identify the noun in this sentence:
-        "The teacher entered the classroom."
-        </p>
-    `;
-}
-
-function showPlanner(){
-
-    document.getElementById("studyArea").innerHTML = `
-        <h3>📅 Revision Planner</h3>
-
-        <p style="margin-top:12px;">
-        📘 Mathematics — 30 minutes
-        </p>
-
-        <p style="margin-top:10px;">
-        📗 English — 30 minutes
-        </p>
-
-        <p style="margin-top:10px;">
-        🔬 Integrated Science — 30 minutes
-        </p>
-
-        <p style="margin-top:10px;">
-        🌍 Social Studies — 30 minutes
-        </p>
-
-        <p style="margin-top:10px;">
-        📝 Practice Quiz — 20 minutes
-        </p>
-
-        <button class="action"
-        onclick="alert('Revision session completed! 🎉')">
-        Mark Plan Complete
-        </button>
-    `;
-}
-
-loadSubjects();
-updateStats();
-
-</script>
-
 </body>
-  </html>
+
+    </html>
