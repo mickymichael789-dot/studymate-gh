@@ -366,13 +366,32 @@ function loadSubjects(){
             updateStats();
 
             document.getElementById("studyArea").innerHTML =
-                "<h3>" + item[0] + "</h3>" +
-                "<p style='margin-top:8px;'>" +
-                "Topic: " + item[1] +
-                "</p>" +
-                "<button class='action' onclick='showNotes()'>" +
-                "Start Studying" +
-                "</button>";
+
+"<h3>📚 " + item[0] + "</h3>" +
+
+"<p style='margin-top:10px;'>" +
+"Topic: " + item[1] +
+"</p>" +
+
+"<p style='margin-top:10px;'>" +
+"Choose what you want to do:" +
+"</p>" +
+
+"<button class='action' onclick='showNotes()'>" +
+"📖 Read Notes" +
+"</button>" +
+
+"<br>" +
+
+"<button class='action' onclick='startQuiz()'>" +
+"📝 Take Quiz" +
+"</button>" +
+
+"<br>" +
+
+"<button class='action' onclick='showPractice()'>" +
+"✏️ Practice Questions" +
+"</button>";
         };
 
         container.appendChild(div);
