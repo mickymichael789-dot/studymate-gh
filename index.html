@@ -223,55 +223,49 @@ function showJHS(){
     document.querySelector(".level-btn:nth-child(2)")
         .classList.remove("active");
 
-    document.querySelector(".section h2:nth-child(1)");
-
     document.querySelector(".section:nth-child(2) h2")
         .textContent = "JHS Subjects";
 
     document.querySelector(".subjects").innerHTML = `
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('English Language','Parts of Speech')">
             <h3>English Language</h3>
             <p>Parts of Speech</p>
         </div>
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('Mathematics','Algebra')">
             <h3>Mathematics</h3>
             <p>Algebra</p>
         </div>
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('Integrated Science','Living Things')">
             <h3>Integrated Science</h3>
             <p>Living Things</p>
         </div>
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('Social Studies','Ghana and Citizenship')">
             <h3>Social Studies</h3>
             <p>Ghana and Citizenship</p>
         </div>
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('Computing','Computer Basics')">
             <h3>Computing</h3>
             <p>Computer Basics</p>
         </div>
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('RME','Moral Values')">
             <h3>RME</h3>
             <p>Moral Values</p>
         </div>
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('French','Basic French')">
             <h3>French</h3>
             <p>Basic French</p>
         </div>
 
-        <div class="subject">
+        <div class="subject" onclick="openSubject('Ghanaian Language','Reading and Writing')">
             <h3>Ghanaian Language</h3>
-            <p>Reading and Writing</p>
-        </div>
-
-    `;
-}
+            <p
 
 
 function showSHS(){
