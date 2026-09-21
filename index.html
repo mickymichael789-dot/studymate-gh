@@ -685,7 +685,23 @@ function showPractice(subject,topic){
     `;
 
 }
+let progress = JSON.parse(localStorage.getItem("studymateProgress")) || {
 
+    quizzesCompleted: 0,
+    practiceCompleted: 0,
+    subjectsStudied: []
+
+};
+
+
+function saveProgress(){
+
+    localStorage.setItem(
+        "studymateProgress",
+        JSON.stringify(progress)
+    );
+
+}
 showJHS();
 
 </script>
