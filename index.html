@@ -867,8 +867,27 @@ let savedPlan = JSON.parse(
             </button>
 
             <div id="plannerResult"
-            style="margin-top:15px;">
+style="margin-top:15px;">
+
+    ${
+        savedPlan
+        ? `
+            <div class="note-box">
+                📌 <strong>Saved Study Plan</strong>
+
+                <p style="margin-top:8px;">
+                    📚 ${savedPlan.subject}
+                </p>
+
+                <p style="margin-top:5px;">
+                    📅 ${savedPlan.date}
+                </p>
             </div>
+        `
+        : ""
+    }
+
+</div>
 
         </div>
 
