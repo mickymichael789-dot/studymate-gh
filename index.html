@@ -270,83 +270,40 @@ function showJHS(){
 
     `;
 }
+function openSubject(subject,topic){
 
+    document.querySelector(".study-area").innerHTML = `
 
-function showSHS(){
+        <h3>📚 ${subject}</h3>
 
-    document.querySelector(".level-btn:nth-child(1)")
-        .classList.remove("active");
+        <p style="margin-top:10px;">
+            Topic: ${topic}
+        </p>
 
-    document.querySelector(".level-btn:nth-child(2)")
-        .classList.add("active");
+        <p style="margin-top:12px;">
+            Choose what you want to do:
+        </p>
 
-    document.querySelector(".section:nth-child(2) h2")
-        .textContent = "SHS Subjects";
+        <button class="action"
+        onclick="showNotes('${subject}','${topic}')">
+            📖 Read Notes
+        </button>
 
-    document.querySelector(".subjects").innerHTML = `
+        <button class="action"
+        onclick="startQuiz('${subject}')">
+            📝 Take Quiz
+        </button>
 
-        <div class="subject" onclick="openSubject('English Language','Comprehension')">
-            <h3>English Language</h3>
-            <p>Comprehension</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Core Mathematics','Quadratic Equations')">
-            <h3>Core Mathematics</h3>
-            <p>Quadratic Equations</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Integrated Science','Cells')">
-            <h3>Integrated Science</h3>
-            <p>Cells</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Social Studies','Governance')">
-            <h3>Social Studies</h3>
-            <p>Governance</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('ICT','Information Systems')">
-            <h3>ICT</h3>
-            <p>Information Systems</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Economics','Demand and Supply')">
-            <h3>Economics</h3>
-            <p>Demand and Supply</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Biology','Living Things')">
-            <h3>Biology</h3>
-            <p>Living Things</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Chemistry','Matter and Chemical Reactions')">
-            <h3>Chemistry</h3>
-            <p>Matter and Chemical Reactions</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Physics','Force and Motion')">
-            <h3>Physics</h3>
-            <p>Force and Motion</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Geography','Map Reading')">
-            <h3>Geography</h3>
-            <p>Map Reading</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Government','Ghanaian Government')">
-            <h3>Government</h3>
-            <p>Ghanaian Government</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Literature','Literary Appreciation')">
-            <h3>Literature</h3>
-            <p>Literary Appreciation</p>
-        </div>
+        <button class="action"
+        onclick="showPractice('${subject}','${topic}')">
+            ✏️ Practice
+        </button>
 
     `;
+
 }
+
+
 
 </script>
 <script>
