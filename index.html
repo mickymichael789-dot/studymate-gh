@@ -890,7 +890,13 @@ onclick="deleteStudyPlan()">
         `
         : ""
     }
+function deleteStudyPlan(){
 
+    localStorage.removeItem("studymateStudyPlan");
+
+    showPlanner();
+
+    }
 </div>
 
         </div>
