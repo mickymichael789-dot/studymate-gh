@@ -827,6 +827,57 @@ function showProgress(){
     `;
 
 }
+ function showPlanner(){
+
+    document.getElementById("studyArea").innerHTML = `
+
+        <h2>📅 Study Planner</h2>
+
+        <div class="note-box">
+
+            <p><strong>Plan your study session.</strong></p>
+
+            <label>📚 Subject</label>
+
+            <select id="plannerSubject"
+            style="width:100%; padding:12px; margin-top:8px; margin-bottom:15px;">
+
+                <option>English Language</option>
+                <option>Mathematics</option>
+                <option>Integrated Science</option>
+                <option>Social Studies</option>
+                <option>Computing</option>
+                <option>RME</option>
+                <option>French</option>
+                <option>Ghanaian Language</option>
+
+            </select>
+
+            <label>📅 Date</label>
+
+            <input type="date"
+            id="plannerDate"
+            style="width:100%; padding:12px; margin-top:8px;">
+
+            <button class="action"
+            onclick="saveStudyPlan()">
+                💾 Save Study Plan
+            </button>
+
+            <div id="plannerResult"
+            style="margin-top:15px;">
+            </div>
+
+        </div>
+
+        <button class="action"
+        onclick="showJHS()">
+            ← Back to Subjects
+        </button>
+
+    `;
+
+}   
 showJHS();
 
 </script>
