@@ -877,7 +877,46 @@ function showProgress(){
 
     `;
 
-}   
+} 
+function saveStudyPlan(){
+
+    const subject = document.getElementById("plannerSubject").value;
+    const date = document.getElementById("plannerDate").value;
+
+    if(!date){
+
+        document.getElementById("plannerResult").innerHTML = `
+            <div class="note-box">
+                ⚠️ Please select a study date.
+            </div>
+        `;
+
+        return;
+    }
+
+    localStorage.setItem(
+        "studymateStudyPlan",
+        JSON.stringify({
+            subject: subject,
+            date: date
+        })
+    );
+
+    document.getElementById("plannerResult").innerHTML = `
+        <div class="note-box">
+            ✅ <strong>Study Plan Saved!</strong>
+
+            <p style="margin-top:8px;">
+                📚 ${subject}
+            </p>
+
+            <p style="margin-top:5px;">
+                📅 ${date}
+            </p>
+        </div>
+    `;
+
+    }    
 showJHS();
 
 </script>
