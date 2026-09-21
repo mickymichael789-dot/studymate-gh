@@ -705,6 +705,39 @@ function saveProgress(){
     );
 
 }
+function showProgress(){
+
+    document.getElementById("studyArea").innerHTML = `
+
+        <h2>📊 My Progress</h2>
+
+        <div class="note-box">
+
+            <p>
+                📝 Quizzes Completed:
+                <strong>${progress.quizzesCompleted}</strong>
+            </p>
+
+            <p style="margin-top:12px;">
+                ✏️ Practice Completed:
+                <strong>${progress.practiceCompleted}</strong>
+            </p>
+
+            <p style="margin-top:12px;">
+                📚 Subjects Studied:
+                <strong>${progress.subjectsStudied.length}</strong>
+            </p>
+
+        </div>
+
+        <button class="action"
+        onclick="showJHS()">
+            ← Back to Subjects
+        </button>
+
+    `;
+
+}    
 showJHS();
 
 </script>
