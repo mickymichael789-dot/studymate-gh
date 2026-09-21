@@ -657,7 +657,13 @@ function showPractice(subject,topic){
 
     }
 
+progress.practiceCompleted++;
 
+if(!progress.subjectsStudied.includes(subject)){
+    progress.subjectsStudied.push(subject);
+}
+
+saveProgress();
     document.getElementById("studyArea").innerHTML = `
 
         <h2>✏️ ${subject} Practice</h2>
