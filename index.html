@@ -191,303 +191,10 @@ onclick="showPlanner()">
 
 
 <script>
-const jhsSubjects = [
-{
-    name:"English Language",
-    topic:"Parts of Speech",
-    notes:"Parts of Speech are groups of words based on the work they do in a sentence. They include nouns, pronouns, verbs, adjectives, adverbs, prepositions, conjunctions and interjections."
+    
+
 },
 
-{
-    name:"English Language",
-    topic:"Tenses",
-    notes:"Tenses show the time when an action happens. The main forms are present, past and future tense. For example: I eat, I ate and I will eat."
-},
-
-{
-    name:"English Language",
-    topic:"Sentence Structure",
-    notes:"Sentence structure refers to how words are arranged to form meaningful sentences. A basic sentence usually contains a subject and a predicate."
-},
-
-{
-    name:"English Language",
-    topic:"Comprehension",
-    notes:"Comprehension involves reading a passage carefully, understanding its meaning and answering questions based on the information provided."
-},
-
-{
-    name:"English Language",
-    topic:"Vocabulary",
-    notes:"Vocabulary refers to the words a person knows and uses. Building vocabulary helps learners understand texts and express their ideas clearly."
-},
-
-{
-    name:"English Language",
-    topic:"Punctuation",
-    notes:"Punctuation marks help make writing clear. Common marks include the full stop, comma, question mark, exclamation mark, colon and quotation marks."
-},
-
-{
-    name:"English Language",
-    topic:"Direct and Indirect Speech",
-    notes:"Direct speech reports the exact words spoken by someone. Indirect speech reports what someone said without using the exact words."
-},
-
-{
-    name:"English Language",
-    topic:"Active and Passive Voice",
-    notes:"In active voice, the subject performs the action. In passive voice, the subject receives the action. Example: Ama wrote the letter. The letter was written by Ama."
-},
-
-{
-    name:"English Language",
-    topic:"Writing Skills",
-    notes:"Writing skills include organising ideas, using correct grammar, choosing appropriate vocabulary and presenting ideas clearly in paragraphs."
-},
-
-{
-    name:"English Language",
-    topic:"Figures of Speech",
-    notes:"Figures of speech are creative ways of using language. Examples include simile, metaphor, personification, hyperbole and irony."
-},
-    {
-        name:"Mathematics",
-        topic:"Algebra",
-        notes:"Algebra uses letters and numbers to represent unknown values. For example, in 3x + 5 = 20, subtract 5 from both sides and divide by 3 to get x = 5."
-    },
-{
-    name:"Mathematics",
-    topic:"Fractions",
-    notes:"A fraction represents part of a whole. It has a numerator at the top and a denominator at the bottom. Fractions can be added, subtracted, multiplied and divided."
-},
-
-{
-    name:"Mathematics",
-    topic:"Decimals",
-    notes:"Decimals are numbers written using a decimal point. They can represent parts of a whole. For example, 0.5 is equal to one-half."
-},
-
-{
-    name:"Mathematics",
-    topic:"Percentages",
-    notes:"A percentage expresses a number as a part of 100. For example, 25% means 25 out of 100, which is equal to one-quarter."
-},
-    {
-    name:"Mathematics",
-    topic:"Ratio and Proportion",
-    notes:"Ratio compares two or more quantities. Proportion shows that two ratios are equal. For example, 2:4 is equivalent to 1:2."
-},
-
-{
-    name:"Mathematics",
-    topic:"Linear Equations",
-    notes:"A linear equation is an equation in which the highest power of the variable is one. For example, 2x + 4 = 10. Subtract 4 and divide by 2 to get x = 3."
-},
-
-{
-    name:"Mathematics",
-    topic:"Geometry",
-    notes:"Geometry deals with shapes, sizes, angles and properties of space. Common topics include triangles, rectangles, circles, perimeter, area and volume."
-},
-    {
-    name:"Mathematics",
-    topic:"Statistics",
-    notes:"Statistics involves collecting, organising, presenting and interpreting data. Common methods include tables, bar charts, line graphs, pie charts and averages."
-},
-
-{
-    name:"Mathematics",
-    topic:"Probability",
-    notes:"Probability measures how likely an event is to happen. It ranges from 0 to 1, where 0 means impossible and 1 means certain."
-},
-
-{
-    name:"Mathematics",
-    topic:"Number Operations",
-    notes:"Number operations include addition, subtraction, multiplication and division. These operations are used to solve everyday mathematical problems."
-},
-    {
-        name:"Integrated Science",
-        topic:"Living Things",
-        notes:"Living things have characteristics such as nutrition, respiration, growth, movement, reproduction, sensitivity and excretion."
-    },
-{
-    name:"Integrated Science",
-    topic:"Cells",
-    notes:"A cell is the basic structural and functional unit of life. Plant and animal cells contain structures that perform different functions."
-},
-
-{
-    name:"Integrated Science",
-    topic:"Human Body Systems",
-    notes:"The human body has systems such as the digestive, respiratory, circulatory and excretory systems. Each system performs important functions that keep the body alive."
-},
-
-{
-    name:"Integrated Science",
-    topic:"Matter",
-    notes:"Matter is anything that has mass and occupies space. The three common states of matter are solids, liquids and gases."
-},
-
-{
-    name:"Integrated Science",
-    topic:"Energy",
-    notes:"Energy is the ability to do work. Forms of energy include heat, light, sound, electrical and chemical energy."
-},
-
-{
-    name:"Integrated Science",
-    topic:"Force and Motion",
-    notes:"A force is a push or pull that can change the motion or shape of an object. Motion describes the movement of an object from one position to another."
-},
-
-{
-    name:"Integrated Science",
-    topic:"The Environment",
-    notes:"The environment includes living and non-living things around us. People can protect the environment through proper waste disposal, tree planting and conservation."
-},
-    {
-    name:"Social Studies",
-    topic:"Culture",
-    notes:"Culture refers to the beliefs, customs, values, traditions and way of life of a group of people."
-},
-
-{
-    name:"Social Studies",
-    topic:"Family and Community",
-    notes:"The family is an important social institution. Families and communities work together to provide support, education, security and development."
-},
-
-{
-    name:"Social Studies",
-    topic:"Leadership",
-    notes:"Leadership involves guiding and influencing people towards achieving common goals. Good leaders should be responsible, honest and accountable."
-},
-
-{
-    name:"Social Studies",
-    topic:"Democracy",
-    notes:"Democracy is a system of government in which citizens participate in choosing their leaders and influencing how they are governed."
-},
-
-{
-    name:"Social Studies",
-    topic:"National Development",
-    notes:"National development involves improving the social, economic, political and physical conditions of a country."
-},
-
-{
-    name:"Social Studies",
-    topic:"Environmental Problems",
-    notes:"Environmental problems include pollution, deforestation, improper waste disposal and land degradation. These problems can affect human health and development."
-},
-    {
-        name:"Social Studies",
-        topic:"Ghana and Citizenship",
-        notes:"A good citizen respects the laws of Ghana, protects public property, participates in community activities and respects the rights of others."
-    },
-
-    {
-        name:"Computing",
-        topic:"Computer Basics",
-        notes:"Computer basics include hardware, software, input devices, output devices, storage devices and how computers process information."
-    },
-{
-    name:"Computing",
-    topic:"Input and Output Devices",
-    notes:"Input devices are used to enter data into a computer, while output devices present processed information. Examples include keyboards, mice, monitors and printers."
-},
-
-{
-    name:"Computing",
-    topic:"Computer Storage",
-    notes:"Storage devices keep data and information for future use. Examples include hard drives, flash drives, memory cards and optical discs."
-},
-
-{
-    name:"Computing",
-    topic:"Operating Systems",
-    notes:"An operating system is software that manages computer hardware and provides a platform for other programs. Examples include Windows, Linux and Android."
-},
-
-{
-    name:"Computing",
-    topic:"Internet",
-    notes:"The internet is a worldwide network that connects computers and other devices. It allows people to communicate, access information and use online services."
-},
-
-{
-    name:"Computing",
-    topic:"Cyber Safety",
-    notes:"Cyber safety involves protecting personal information and devices when using technology. Users should use strong passwords, avoid suspicious links and protect their private information."
-},
-
-{
-    name:"Computing",
-    topic:"Programming Basics",
-    notes:"Programming involves giving computers instructions to perform tasks. Programs are written using programming languages and follow logical steps."
-},
-    {
-        name:"RME",
-        topic:"Moral Values",
-        notes:"Moral values guide people to distinguish between right and wrong. Examples include honesty, respect, kindness, responsibility and fairness."
-    },
-{
-    name:"RME",
-    topic:"Respect",
-    notes:"Respect means treating people, property and institutions with consideration and dignity."
-},
-
-{
-    name:"RME",
-    topic:"Honesty",
-    notes:"Honesty means telling the truth and avoiding cheating, stealing and deception."
-},
-
-{
-    name:"RME",
-    topic:"Responsibility",
-    notes:"Responsibility means accepting duties and being accountable for one's actions and decisions."
-},
-
-{
-    name:"RME",
-    topic:"Religious Tolerance",
-    notes:"Religious tolerance means respecting people who practise different religions and allowing them to live peacefully together."
-},
-
-{
-    name:"RME",
-    topic:"Peace and Conflict Resolution",
-    notes:"Peace involves living without violence and unnecessary conflict. Conflicts can be resolved through dialogue, understanding, forgiveness and compromise."
-},
-
-{
-    name:"RME",
-    topic:"Good Character",
-    notes:"Good character includes qualities such as kindness, patience, humility, discipline, honesty and respect for others."
-},
-    {
-        name:"French",
-        topic:"Basic French",
-        notes:"Basic French includes common greetings and expressions such as Bonjour (Hello), Merci (Thank you), Oui (Yes) and Non (No)."
-    },
-{
-    name:"French",
-    topic:"Numbers in French",
-    notes:"French numbers are used for counting and giving information. Examples include un (one), deux (two), trois (three), quatre (four) and cinq (five)."
-},
-
-{
-    name:"French",
-    topic:"Days of the Week",
-    notes:"The days of the week in French include lundi, mardi, mercredi, jeudi, vendredi, samedi and dimanche."
-},
-
-{
-    name:"French",
-    topic:"Months of the Year",
     notes:"The months in French include janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre and décembre."
 },
 
@@ -496,58 +203,380 @@ const jhsSubjects = [
     topic:"Family",
     notes:"Common French family words include père (father), mère (mother), frère (brother), sœur (sister) and enfant (child)."
 },
+const jhsSubjects = [
 
-{
-    name:"French",
-    topic:"Introducing Yourself",
-    notes:"Simple French introductions include Je m'appelle... (My name is...), J'ai ... ans (I am ... years old) and Je suis ghanéen/ghanéenne (I am Ghanaian)."
-},
+    {
+        name:"English Language",
+        topic:"Parts of Speech",
+        notes:"Parts of Speech are groups of words based on the work they do in a sentence. They include nouns, pronouns, verbs, adjectives, adverbs, prepositions, conjunctions and interjections."
+    },
 
-{
-    name:"French",
-    topic:"Common French Expressions",
-    notes:"Common expressions include Comment ça va? (How are you?), Ça va bien (I am fine), S'il vous plaît (Please) and Au revoir (Goodbye)."
-},
+    {
+        name:"English Language",
+        topic:"Tenses",
+        notes:"Tenses show the time when an action happens. The main forms are present, past and future tense. For example: I eat, I ate and I will eat."
+    },
+
+    {
+        name:"English Language",
+        topic:"Sentence Structure",
+        notes:"Sentence structure refers to how words are arranged to form meaningful sentences. A basic sentence usually contains a subject and a predicate."
+    },
+
+    {
+        name:"English Language",
+        topic:"Comprehension",
+        notes:"Comprehension involves reading a passage carefully, understanding its meaning and answering questions based on the information provided."
+    },
+
+    {
+        name:"English Language",
+        topic:"Vocabulary",
+        notes:"Vocabulary refers to the words a person knows and uses. Building vocabulary helps learners understand texts and express their ideas clearly."
+    },
+
+    {
+        name:"English Language",
+        topic:"Punctuation",
+        notes:"Punctuation marks help make writing clear. Common marks include the full stop, comma, question mark, exclamation mark, colon and quotation marks."
+    },
+
+    {
+        name:"English Language",
+        topic:"Direct and Indirect Speech",
+        notes:"Direct speech reports the exact words spoken by someone. Indirect speech reports what someone said without using the exact words."
+    },
+
+    {
+        name:"English Language",
+        topic:"Active and Passive Voice",
+        notes:"In active voice, the subject performs the action. In passive voice, the subject receives the action. Example: Ama wrote the letter. The letter was written by Ama."
+    },
+
+    {
+        name:"English Language",
+        topic:"Writing Skills",
+        notes:"Writing skills include organising ideas, using correct grammar, choosing appropriate vocabulary and presenting ideas clearly in paragraphs."
+    },
+
+    {
+        name:"English Language",
+        topic:"Figures of Speech",
+        notes:"Figures of speech are creative ways of using language. Examples include simile, metaphor, personification, hyperbole and irony."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Algebra",
+        notes:"Algebra uses letters and numbers to represent unknown values. For example, in 3x + 5 = 20, subtract 5 from both sides and divide by 3 to get x = 5."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Fractions",
+        notes:"A fraction represents part of a whole. It has a numerator at the top and a denominator at the bottom."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Decimals",
+        notes:"Decimals are numbers written using a decimal point. They can represent parts of a whole. For example, 0.5 is equal to one-half."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Percentages",
+        notes:"A percentage expresses a number as a part of 100. For example, 25% means 25 out of 100."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Ratio and Proportion",
+        notes:"Ratio compares two or more quantities. Proportion shows that two ratios are equal."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Linear Equations",
+        notes:"A linear equation is an equation in which the highest power of the variable is one. For example, 2x + 4 = 10 gives x = 3."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Geometry",
+        notes:"Geometry deals with shapes, sizes, angles and properties of space. Common topics include triangles, rectangles, circles, perimeter, area and volume."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Statistics",
+        notes:"Statistics involves collecting, organising, presenting and interpreting data. Common methods include tables, charts and averages."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Probability",
+        notes:"Probability measures how likely an event is to happen. It ranges from 0 to 1."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Number Operations",
+        notes:"Number operations include addition, subtraction, multiplication and division."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Living Things",
+        notes:"Living things have characteristics such as nutrition, respiration, growth, movement, reproduction, sensitivity and excretion."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Cells",
+        notes:"A cell is the basic structural and functional unit of life. Plant and animal cells contain structures that perform different functions."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Human Body Systems",
+        notes:"The human body has systems such as the digestive, respiratory, circulatory and excretory systems."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Matter",
+        notes:"Matter is anything that has mass and occupies space. The three common states are solids, liquids and gases."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Energy",
+        notes:"Energy is the ability to do work. Forms include heat, light, sound, electrical and chemical energy."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Force and Motion",
+        notes:"A force is a push or pull that can change the motion or shape of an object."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"The Environment",
+        notes:"The environment includes living and non-living things around us. People can protect it through conservation and proper waste disposal."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Ghana and Citizenship",
+        notes:"A good citizen respects the laws of Ghana, protects public property, participates in community activities and respects the rights of others."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Culture",
+        notes:"Culture refers to the beliefs, customs, values, traditions and way of life of a group of people."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Family and Community",
+        notes:"The family is an important social institution. Families and communities work together to provide support and development."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Leadership",
+        notes:"Leadership involves guiding and influencing people towards achieving common goals."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Democracy",
+        notes:"Democracy is a system of government in which citizens participate in choosing their leaders."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"National Development",
+        notes:"National development involves improving the social, economic, political and physical conditions of a country."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Environmental Problems",
+        notes:"Environmental problems include pollution, deforestation, improper waste disposal and land degradation."
+    },
+
+    {
+        name:"Computing",
+        topic:"Computer Basics",
+        notes:"Computer basics include hardware, software, input devices, output devices, storage devices and how computers process information."
+    },
+
+    {
+        name:"Computing",
+        topic:"Input and Output Devices",
+        notes:"Input devices enter data into a computer, while output devices present processed information."
+    },
+
+    {
+        name:"Computing",
+        topic:"Computer Storage",
+        notes:"Storage devices keep data and information for future use. Examples include hard drives, flash drives and memory cards."
+    },
+
+    {
+        name:"Computing",
+        topic:"Operating Systems",
+        notes:"An operating system manages computer hardware and provides a platform for other programs."
+    },
+
+    {
+        name:"Computing",
+        topic:"Internet",
+        notes:"The internet is a worldwide network that connects computers and other devices."
+    },
+
+    {
+        name:"Computing",
+        topic:"Cyber Safety",
+        notes:"Cyber safety involves protecting personal information and devices when using technology."
+    },
+
+    {
+        name:"Computing",
+        topic:"Programming Basics",
+        notes:"Programming involves giving computers instructions to perform tasks."
+    },
+
+    {
+        name:"RME",
+        topic:"Moral Values",
+        notes:"Moral values guide people to distinguish between right and wrong. Examples include honesty, respect, kindness, responsibility and fairness."
+    },
+
+    {
+        name:"RME",
+        topic:"Respect",
+        notes:"Respect means treating people, property and institutions with consideration and dignity."
+    },
+
+    {
+        name:"RME",
+        topic:"Honesty",
+        notes:"Honesty means telling the truth and avoiding cheating, stealing and deception."
+    },
+
+    {
+        name:"RME",
+        topic:"Responsibility",
+        notes:"Responsibility means accepting duties and being accountable for one's actions."
+    },
+
+    {
+        name:"RME",
+        topic:"Religious Tolerance",
+        notes:"Religious tolerance means respecting people who practise different religions and allowing them to live peacefully together."
+    },
+
+    {
+        name:"RME",
+        topic:"Peace and Conflict Resolution",
+        notes:"Peace involves living without violence. Conflicts can be resolved through dialogue, understanding, forgiveness and compromise."
+    },
+
+    {
+        name:"RME",
+        topic:"Good Character",
+        notes:"Good character includes qualities such as kindness, patience, humility, discipline, honesty and respect."
+    },
+
+    {
+        name:"French",
+        topic:"Basic French",
+        notes:"Basic French includes common greetings and expressions such as Bonjour, Merci, Oui and Non."
+    },
+
+    {
+        name:"French",
+        topic:"Numbers in French",
+        notes:"French numbers are used for counting. Examples include un, deux, trois, quatre and cinq."
+    },
+
+    {
+        name:"French",
+        topic:"Days of the Week",
+        notes:"The days include lundi, mardi, mercredi, jeudi, vendredi, samedi and dimanche."
+    },
+
+    {
+        name:"French",
+        topic:"Months of the Year",
+        notes:"The months include janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre and décembre."
+    },
+
+    {
+        name:"French",
+        topic:"Family",
+        notes:"Common French family words include père, mère, frère, sœur and enfant."
+    },
+
+    {
+        name:"French",
+        topic:"Introducing Yourself",
+        notes:"Simple French introductions include Je m'appelle... and J'ai ... ans."
+    },
+
+    {
+        name:"French",
+        topic:"Common French Expressions",
+        notes:"Common expressions include Comment ça va?, Ça va bien, S'il vous plaît and Au revoir."
+    },
+
     {
         name:"Ghanaian Language",
         topic:"Reading and Writing",
         notes:"Reading and writing involve understanding written information and expressing ideas clearly using the appropriate Ghanaian language."
+    },
+
+    {
+        name:"Ghanaian Language",
+        topic:"Alphabet and Sounds",
+        notes:"The alphabet and sound system of a Ghanaian language help learners read and pronounce words correctly."
+    },
+
+    {
+        name:"Ghanaian Language",
+        topic:"Vocabulary",
+        notes:"Vocabulary refers to the words used in a language. Learners develop vocabulary through reading, listening, speaking and writing."
+    },
+
+    {
+        name:"Ghanaian Language",
+        topic:"Sentence Formation",
+        notes:"Sentence formation involves arranging words in the correct order to express complete and meaningful ideas."
+    },
+
+    {
+        name:"Ghanaian Language",
+        topic:"Grammar",
+        notes:"Grammar refers to the rules that guide how words are formed and arranged in a language."
+    },
+
+    {
+        name:"Ghanaian Language",
+        topic:"Folktales",
+        notes:"Folktales are traditional stories passed from one generation to another. They often teach moral lessons and preserve cultural values."
+    },
+
+    {
+        name:"Ghanaian Language",
+        topic:"Proverbs",
+        notes:"Proverbs are short traditional sayings that express wisdom or advice."
     }
-{
-    name:"Ghanaian Language",
-    topic:"Alphabet and Sounds",
-    notes:"The alphabet and sound system of a Ghanaian language help learners read and pronounce words correctly."
-},
 
-{
-    name:"Ghanaian Language",
-    topic:"Vocabulary",
-    notes:"Vocabulary refers to the words used in a language. Learners develop vocabulary through reading, listening, speaking and writing."
-},
-
-{
-    name:"Ghanaian Language",
-    topic:"Sentence Formation",
-    notes:"Sentence formation involves arranging words in the correct order to express complete and meaningful ideas."
-},
-
-{
-    name:"Ghanaian Language",
-    topic:"Grammar",
-    notes:"Grammar refers to the rules that guide how words are formed and arranged in a language."
-},
-
-{
-    name:"Ghanaian Language",
-    topic:"Folktales",
-    notes:"Folktales are traditional stories passed from one generation to another. They often teach moral lessons and preserve cultural values."
-},
-
-{
-    name:"Ghanaian Language",
-    topic:"Proverbs",
-    notes:"Proverbs are short traditional sayings that express wisdom or advice. They are commonly used to teach lessons and explain ideas."
-},
 ];
 
 
