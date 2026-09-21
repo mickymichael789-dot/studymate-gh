@@ -577,16 +577,105 @@ function checkAnswer(selected,correct,subject,topic){
 
 }
 
-
 function showPractice(subject,topic){
+
+    const practice = {
+
+        "English Language": [
+            "Write five nouns and use each one in a sentence.",
+            "Identify the verb in five different sentences."
+        ],
+
+        "Mathematics": [
+            "Solve: 2x + 6 = 16.",
+            "Simplify: 3x + 2x - 4."
+        ],
+
+        "Integrated Science": [
+            "List five characteristics of living things.",
+            "Give three examples of living organisms."
+        ],
+
+        "Social Studies": [
+            "Mention five qualities of a good citizen.",
+            "State three responsibilities of a citizen."
+        ],
+
+        "Computing": [
+            "List five computer input devices.",
+            "Mention three examples of computer output devices."
+        ],
+
+        "RME": [
+            "Mention five moral values.",
+            "Explain why honesty is important."
+        ],
+
+        "French": [
+            "Write five common French greetings or expressions and give their English meanings.",
+            "Translate: 'Merci beaucoup' into English."
+        ],
+
+        "Ghanaian Language": [
+            "Write five simple words in your Ghanaian language.",
+            "Write three simple sentences in your Ghanaian language."
+        ]
+
+    };
+
+
+    const questions = practice[subject];
+
+
+    if(!questions){
+
+        document.getElementById("studyArea").innerHTML = `
+
+            <h2>✏️ ${subject} Practice</h2>
+
+            <p style="margin-top:12px;">
+                Practice questions for this subject are coming soon.
+            </p>
+
+            <button class="action"
+            onclick="openSubject('${subject}','${topic}')">
+                ← Back to Topic
+            </button>
+
+        `;
+
+        return;
+
+    }
+
 
     document.getElementById("studyArea").innerHTML = `
 
         <h2>✏️ ${subject} Practice</h2>
 
         <p style="margin-top:12px;">
-            Practice questions for <strong>${topic}</strong> will be added here.
+            <strong>Topic:</strong> ${topic}
         </p>
+
+        <div class="note-box">
+
+            <h3>Practice Questions</h3>
+
+            <ol style="margin-top:12px; padding-left:25px;">
+
+                ${questions.map(function(question){
+
+                    return `
+                        <li style="margin-bottom:12px;">
+                            ${question}
+                        </li>
+                    `;
+
+                }).join("")}
+
+            </ol>
+
+        </div>
 
         <button class="action"
         onclick="openSubject('${subject}','${topic}')">
@@ -596,7 +685,6 @@ function showPractice(subject,topic){
     `;
 
 }
-
 
 showJHS();
 
