@@ -828,7 +828,9 @@ function showProgress(){
 
 }
  function showPlanner(){
-
+let savedPlan = JSON.parse(
+    localStorage.getItem("studymateStudyPlan")
+);
     document.getElementById("studyArea").innerHTML = `
 
         <h2>📅 Study Planner</h2>
