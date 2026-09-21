@@ -12,27 +12,28 @@
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f4f7f5;
-    color:#17231c;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#222;
 }
 
 header{
-    background:#087f3f;
+    background:#2563eb;
     color:white;
-    padding:25px 18px;
     text-align:center;
+    padding:25px 15px;
 }
 
 header h1{
-    font-size:30px;
+    font-size:28px;
 }
 
 header p{
-    margin-top:6px;
+    margin-top:8px;
+    font-size:15px;
 }
 
 .container{
@@ -41,243 +42,315 @@ header p{
     padding:20px;
 }
 
-.section{
-    margin-bottom:25px;
-}
-
-.section h2{
-    margin-bottom:12px;
-}
-
-.levels{
+.level-buttons{
     display:flex;
     gap:10px;
+    margin-bottom:20px;
 }
 
 .level-btn{
     flex:1;
-    padding:15px;
+    padding:13px;
     border:none;
-    border-radius:12px;
-    background:white;
-    font-size:17px;
+    border-radius:8px;
+    background:#ddd;
+    cursor:pointer;
+    font-size:16px;
     font-weight:bold;
 }
 
 .level-btn.active{
-    background:#087f3f;
+    background:#2563eb;
     color:white;
-}
-
-.subjects{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.subject{
-    background:white;
-    padding:18px;
-    border-radius:14px;
-    box-shadow:0 2px 8px rgba(0,0,0,.07);
-}
-
-.subject h3{
-    margin-bottom:6px;
-}
-
-.subject p{
-    color:#66736b;
-    font-size:14px;
 }
 
 .study-area{
     background:white;
     padding:20px;
-    border-radius:14px;
-    box-shadow:0 2px 8px rgba(0,0,0,.07);
+    border-radius:12px;
+    margin-bottom:20px;
+    min-height:120px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
-@media(max-width:600px){
+.subjects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
 
-    .subjects{
-        grid-template-columns:1fr;
-    }
+.subject{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    transition:.2s;
+}
 
+.subject:hover{
+    transform:translateY(-2px);
+}
+
+.subject h3{
+    color:#2563eb;
+    margin-bottom:8px;
+}
+
+.action{
+    display:block;
+    width:100%;
+    margin-top:12px;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.action:hover{
+    background:#1d4ed8;
+}
+
+.note-box{
+    margin-top:15px;
+    padding:15px;
+    background:#f1f5f9;
+    border-radius:8px;
+    line-height:1.6;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-
     <h1>📚 StudyMate GH</h1>
-
     <p>Learn • Practice • Improve</p>
-
 </header>
 
 <div class="container">
 
-    <div class="section">
+    <div class="level-buttons">
 
-        <h2>Choose your level</h2>
+        <button id="jhsBtn"
+        class="level-btn active"
+        onclick="showJHS()">
+            JHS
+        </button>
 
-        <div class="levels">
-
-            <button class="level-btn active" onclick="showJHS()">
-    JHS
-</button>
-
-<button class="level-btn" onclick="showSHS()">
-    SHS
-</button>
-        </div>
+        <button id="shsBtn"
+        class="level-btn"
+        onclick="showSHS()">
+            SHS
+        </button>
 
     </div>
 
-    <div class="section">
+    <div class="study-area" id="studyArea">
 
-        <h2>JHS Subjects</h2>
+        <h2>📖 Study Area</h2>
 
-        <div class="subjects">
+        <p style="margin-top:10px;">
+            Select a subject below to begin learning.
+        </p>
 
-            <div class="subject">
-
-                <div class="subjects">
-
-<div class="subject" onclick="openSubject('English Language','Parts of Speech')">
-    <h3>English Language</h3>
-    <p>Parts of Speech</p>
-</div>
-
-    <div class="subject">
-        <h3>Mathematics</h3>
-        <p>Algebra</p>
     </div>
 
-    <div class="subject">
-        <h3>Integrated Science</h3>
-        <p>Living Things</p>
-    </div>
-
-    <div class="subject">
-        <h3>Social Studies</h3>
-        <p>Ghana and Citizenship</p>
-    </div>
-
-    <div class="subject">
-        <h3>Computing</h3>
-        <p>Computer Basics</p>
-    </div>
-
-    <div class="subject">
-        <h3>RME</h3>
-        <p>Moral Values</p>
-    </div>
-
-    <div class="subject">
-        <h3>French</h3>
-        <p>Basic French</p>
-    </div>
-
-    <div class="subject">
-        <h3>Ghanaian Language</h3>
-        <p>Reading and Writing</p>
-    </div>
+    <div class="subjects" id="subjects"></div>
 
 </div>
 
-        </div>
-
-    </div>
-
-    <div class="section">
-
-        <h2>Study Area</h2>
-
-        <div class="study-area">
-
-            <h3>Welcome to StudyMate GH 👋</h3>
-
-            <p style="margin-top:8px;">
-                Select a subject to start studying.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
 
 <script>
 
+const jhsSubjects = [
+
+    {
+        name:"English Language",
+        topic:"Parts of Speech",
+        notes:"Parts of Speech are groups of words based on the work they do in a sentence. They include nouns, pronouns, verbs, adjectives, adverbs, prepositions, conjunctions and interjections."
+    },
+
+    {
+        name:"Mathematics",
+        topic:"Algebra",
+        notes:"Algebra uses letters and numbers to represent unknown values. For example, in 3x + 5 = 20, subtract 5 from both sides and divide by 3 to get x = 5."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Living Things",
+        notes:"Living things have characteristics such as nutrition, respiration, growth, movement, reproduction, sensitivity and excretion."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Ghana and Citizenship",
+        notes:"A good citizen respects the laws of Ghana, protects public property, participates in community activities and respects the rights of others."
+    },
+
+    {
+        name:"Computing",
+        topic:"Computer Basics",
+        notes:"Computer basics include hardware, software, input devices, output devices, storage devices and how computers process information."
+    },
+
+    {
+        name:"RME",
+        topic:"Moral Values",
+        notes:"Moral values guide people to distinguish between right and wrong. Examples include honesty, respect, kindness, responsibility and fairness."
+    },
+
+    {
+        name:"French",
+        topic:"Basic French",
+        notes:"Basic French includes common greetings and expressions such as Bonjour (Hello), Merci (Thank you), Oui (Yes) and Non (No)."
+    },
+
+    {
+        name:"Ghanaian Language",
+        topic:"Reading and Writing",
+        notes:"Reading and writing involve understanding written information and expressing ideas clearly using the appropriate Ghanaian language."
+    }
+
+];
+
+
+const shsSubjects = [
+
+    {
+        name:"English Language",
+        topic:"Comprehension",
+        notes:"Comprehension involves reading a passage carefully, understanding its meaning and answering questions based on the information given."
+    },
+
+    {
+        name:"Core Mathematics",
+        topic:"Quadratic Equations",
+        notes:"A quadratic equation is commonly written as ax² + bx + c = 0. It can be solved by factorisation, completing the square or using the quadratic formula."
+    },
+
+    {
+        name:"Integrated Science",
+        topic:"Cells",
+        notes:"The cell is the basic structural and functional unit of living organisms. Cells contain structures such as the nucleus, cytoplasm and cell membrane."
+    },
+
+    {
+        name:"Social Studies",
+        topic:"Governance",
+        notes:"Governance refers to the way a country or organisation is managed. Good governance involves accountability, participation, transparency and respect for the rule of law."
+    },
+
+    {
+        name:"ICT",
+        topic:"Information Systems",
+        notes:"An information system collects, processes, stores and distributes information to support decision-making and other activities."
+    },
+
+    {
+        name:"Economics",
+        topic:"Demand and Supply",
+        notes:"Demand refers to the quantity of a good consumers are willing and able to buy. Supply refers to the quantity producers are willing and able to offer for sale."
+    },
+
+    {
+        name:"Biology",
+        topic:"Living Things",
+        notes:"Biology is the study of living organisms. It covers topics such as cells, nutrition, reproduction, genetics and ecology."
+    },
+
+    {
+        name:"Chemistry",
+        topic:"Matter and Chemical Reactions",
+        notes:"Matter is anything that has mass and occupies space. Chemical reactions involve the transformation of substances into new substances."
+    },
+
+    {
+        name:"Physics",
+        topic:"Force and Motion",
+        notes:"Force is a push or pull that can change the motion of an object. Motion describes a change in position with time."
+    },
+
+    {
+        name:"Geography",
+        topic:"Map Reading",
+        notes:"Map reading involves understanding symbols, scales, directions, grid references and other features used to represent places on maps."
+    },
+
+    {
+        name:"Government",
+        topic:"Ghanaian Government",
+        notes:"Government refers to the system through which a country is governed. Ghana operates a constitutional democratic system."
+    },
+
+    {
+        name:"Literature",
+        topic:"Literary Appreciation",
+        notes:"Literary appreciation involves understanding and analysing works such as poetry, prose and drama."
+    }
+
+];
+
+
 function showJHS(){
 
-    document.querySelector(".level-btn:nth-child(1)")
-        .classList.add("active");
+    document.getElementById("jhsBtn").classList.add("active");
+    document.getElementById("shsBtn").classList.remove("active");
 
-    document.querySelector(".level-btn:nth-child(2)")
-        .classList.remove("active");
+    displaySubjects(jhsSubjects);
 
-    document.querySelector(".section:nth-child(2) h2")
-        .textContent = "JHS Subjects";
-
-    document.querySelector(".subjects").innerHTML = `
-
-        <div class="subject" onclick="openSubject('English Language','Parts of Speech')">
-            <h3>English Language</h3>
-            <p>Parts of Speech</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Mathematics','Algebra')">
-    <h3>Mathematics</h3>
-    <p>Algebra</p>
-</div>
-
-        <div class="subject" onclick="openSubject('Integrated Science','Living Things')">
-            <h3>Integrated Science</h3>
-            <p>Living Things</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Social Studies','Ghana and Citizenship')">
-            <h3>Social Studies</h3>
-            <p>Ghana and Citizenship</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Computing','Computer Basics')">
-            <h3>Computing</h3>
-            <p>Computer Basics</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('RME','Moral Values')">
-            <h3>RME</h3>
-            <p>Moral Values</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('French','Basic French')">
-            <h3>French</h3>
-            <p>Basic French</p>
-        </div>
-
-        <div class="subject" onclick="openSubject('Ghanaian Language','Reading and Writing')">
-            <h3>Ghanaian Language</h3>
-            <p>Reading and Writing</p>
-        </div>
-
-    `;
 }
+
+
+function showSHS(){
+
+    document.getElementById("shsBtn").classList.add("active");
+    document.getElementById("jhsBtn").classList.remove("active");
+
+    displaySubjects(shsSubjects);
+
+}
+
+
+function displaySubjects(subjectList){
+
+    const container = document.getElementById("subjects");
+
+    container.innerHTML = "";
+
+    subjectList.forEach(function(subject){
+
+        container.innerHTML += `
+
+            <div class="subject"
+            onclick="openSubject('${subject.name}','${subject.topic}')">
+
+                <h3>${subject.name}</h3>
+
+                <p>${subject.topic}</p>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
 function openSubject(subject,topic){
 
-    document.querySelector(".study-area").innerHTML = `
+    document.getElementById("studyArea").innerHTML = `
 
-        <h3>📚 ${subject}</h3>
+        <h2>📚 ${subject}</h2>
 
         <p style="margin-top:10px;">
-            Topic: ${topic}
+            <strong>Topic:</strong> ${topic}
         </p>
 
         <p style="margin-top:12px;">
@@ -290,7 +363,7 @@ function openSubject(subject,topic){
         </button>
 
         <button class="action"
-        onclick="startQuiz('${subject}')">
+        onclick="showQuiz('${subject}','${topic}')">
             📝 Take Quiz
         </button>
 
@@ -302,45 +375,54 @@ function openSubject(subject,topic){
     `;
 
 }
+
+
 function showNotes(subject,topic){
 
-    let notes = {
+    let allSubjects = jhsSubjects.concat(shsSubjects);
 
-        "English Language":
-        "Parts of Speech are groups of words based on the work they do in a sentence. Examples include nouns, pronouns, verbs, adjectives, adverbs, prepositions and conjunctions.",
+    let selected = allSubjects.find(function(item){
 
-        "Mathematics":
-        "Algebra uses letters and numbers to represent unknown values. For example, in 3x + 5 = 20, subtract 5 from both sides and divide by 3 to get x = 5.",
+        return item.name === subject && item.topic === topic;
 
-        "Integrated Science":
-        "Living things have characteristics such as nutrition, respiration, growth, movement, reproduction, sensitivity and excretion.",
+    });
 
-        "Social Studies":
-        "A good citizen respects the laws of Ghana, protects public property, participates in community activities and respects the rights of others.",
 
-        "Computing":
-        "Computer basics include understanding hardware, software, input devices, output devices, storage devices and how computers process information.",
+    let noteText = selected
+        ? selected.notes
+        : "Notes for this topic are coming soon.";
 
-        "RME":
-        "Moral values guide people to distinguish between right and wrong. Examples include honesty, respect, kindness, responsibility and fairness.",
 
-        "French":
-        "Basic French includes common greetings and expressions such as Bonjour (Good morning/Hello), Merci (Thank you), Oui (Yes) and Non (No).",
+    document.getElementById("studyArea").innerHTML = `
 
-        "Ghanaian Language":
-        "Reading and writing involve understanding written information and expressing ideas clearly using the appropriate Ghanaian language."
-    };
+        <h2>📖 ${subject} Notes</h2>
 
-    document.querySelector(".study-area").innerHTML = `
-
-        <h3>📖 ${subject} Notes</h3>
-
-        <p style="margin-top:12px;">
+        <p style="margin-top:10px;">
             <strong>Topic:</strong> ${topic}
         </p>
 
+        <div class="note-box">
+            ${noteText}
+        </div>
+
+        <button class="action"
+        onclick="openSubject('${subject}','${topic}')">
+            ← Back to Topic
+        </button>
+
+    `;
+
+}
+
+
+function showQuiz(subject,topic){
+
+    document.getElementById("studyArea").innerHTML = `
+
+        <h2>📝 ${subject} Quiz</h2>
+
         <p style="margin-top:12px;">
-            ${notes[subject]}
+            Quiz for <strong>${topic}</strong> will be added here.
         </p>
 
         <button class="action"
@@ -349,8 +431,33 @@ function showNotes(subject,topic){
         </button>
 
     `;
+
 }
 
-</script>
-<script>
 
+function showPractice(subject,topic){
+
+    document.getElementById("studyArea").innerHTML = `
+
+        <h2>✏️ ${subject} Practice</h2>
+
+        <p style="margin-top:12px;">
+            Practice questions for <strong>${topic}</strong> will be added here.
+        </p>
+
+        <button class="action"
+        onclick="openSubject('${subject}','${topic}')">
+            ← Back to Topic
+        </button>
+
+    `;
+
+}
+
+
+showJHS();
+
+</script>
+
+</body>
+</html>
