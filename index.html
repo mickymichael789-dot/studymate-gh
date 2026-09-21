@@ -417,20 +417,163 @@ function showNotes(subject,topic){
 
 function showQuiz(subject,topic){
 
+    const quizzes = {
+
+        "English Language": {
+            question:"Which word is a noun?",
+            options:["Run","Beautiful","Teacher","Quickly"],
+            answer:"Teacher"
+        },
+
+        "Mathematics": {
+            question:"If 3x + 5 = 20, what is x?",
+            options:["3","5","7","10"],
+            answer:"5"
+        },
+
+        "Integrated Science": {
+            question:"Which of these is a characteristic of living things?",
+            options:["Growth","Rusting","Melting","Breaking"],
+            answer:"Growth"
+        },
+
+        "Social Studies": {
+            question:"Which of these is a responsibility of a good citizen?",
+            options:["Destroying public property","Obeying the law","Breaking rules","Avoiding community activities"],
+            answer:"Obeying the law"
+        },
+
+        "Computing": {
+            question:"Which device is used to enter information into a computer?",
+            options:["Monitor","Keyboard","Speaker","Projector"],
+            answer:"Keyboard"
+        },
+
+        "RME": {
+            question:"Which of these is a moral value?",
+            options:["Honesty","Stealing","Laziness","Disrespect"],
+            answer:"Honesty"
+        },
+
+        "French": {
+            question:"What does 'Merci' mean in English?",
+            options:["Hello","Goodbye","Thank you","Please"],
+            answer:"Thank you"
+        },
+
+        "Ghanaian Language": {
+            question:"Which skill involves understanding written words?",
+            options:["Reading","Running","Singing","Drawing"],
+            answer:"Reading"
+        }
+
+    };
+
+
+    const quiz = quizzes[subject];
+
+
+    if(!quiz){
+
+        document.getElementById("studyArea").innerHTML = `
+
+            <h2>📝 ${subject} Quiz</h2>
+
+            <p style="margin-top:12px;">
+                Quiz questions for this subject are coming soon.
+            </p>
+
+            <button class="action"
+            onclick="openSubject('${subject}','${topic}')">
+                ← Back to Topic
+            </button>
+
+        `;
+
+        return;
+
+    }
+
+
     document.getElementById("studyArea").innerHTML = `
 
         <h2>📝 ${subject} Quiz</h2>
 
-        <p style="margin-top:12px;">
-            Quiz for <strong>${topic}</strong> will be added here.
+        <p style="margin-top:15px;">
+            <strong>${quiz.question}</strong>
         </p>
 
-        <button class="action"
-        onclick="openSubject('${subject}','${topic}')">
-            ← Back to Topic
-        </button>
+        <div style="margin-top:15px;">
+
+            ${quiz.options.map(function(option){
+
+                return `
+                    <button class="action"
+                    onclick="checkAnswer('${option}','${quiz.answer}','${subject}','${topic}')">
+                        ${option}
+                    </button>
+                `;
+
+            }).join("")}
+
+        </div>
+
+        <div id="quizResult"></div>
 
     `;
+
+}
+
+
+function checkAnswer(selected,correct,subject,topic){
+
+    const result = document.getElementById("quizResult");
+
+
+    if(selected === correct){
+
+        result.innerHTML = `
+
+            <div class="note-box">
+
+                🎉 <strong>Correct!</strong>
+
+                <p style="margin-top:8px;">
+                    Well done! Keep learning.
+                </p>
+
+                <button class="action"
+                onclick="openSubject('${subject}','${topic}')">
+                    ← Back to Topic
+                </button>
+
+            </div>
+
+        `;
+
+    }else{
+
+        result.innerHTML = `
+
+            <div class="note-box">
+
+                ❌ <strong>Not quite.</strong>
+
+                <p style="margin-top:8px;">
+                    The correct answer is:
+                    <strong>${correct}</strong>
+                </p>
+
+                <button class="action"
+                onclick="showQuiz('${subject}','${topic}')">
+                    🔄 Try Again
+                </button>
+
+            </div>
+
+        `;
+
+    }
 
 }
 
