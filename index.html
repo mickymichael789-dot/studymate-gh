@@ -304,6 +304,33 @@ function openSubject(subject,topic){
 }
 function showNotes(subject,topic){
 
+    let notes = {
+
+        "English Language":
+        "Parts of Speech are groups of words based on the work they do in a sentence. Examples include nouns, pronouns, verbs, adjectives, adverbs, prepositions and conjunctions.",
+
+        "Mathematics":
+        "Algebra uses letters and numbers to represent unknown values. For example, in 3x + 5 = 20, subtract 5 from both sides and divide by 3 to get x = 5.",
+
+        "Integrated Science":
+        "Living things have characteristics such as nutrition, respiration, growth, movement, reproduction, sensitivity and excretion.",
+
+        "Social Studies":
+        "A good citizen respects the laws of Ghana, protects public property, participates in community activities and respects the rights of others.",
+
+        "Computing":
+        "Computer basics include understanding hardware, software, input devices, output devices, storage devices and how computers process information.",
+
+        "RME":
+        "Moral values guide people to distinguish between right and wrong. Examples include honesty, respect, kindness, responsibility and fairness.",
+
+        "French":
+        "Basic French includes common greetings and expressions such as Bonjour (Good morning/Hello), Merci (Thank you), Oui (Yes) and Non (No).",
+
+        "Ghanaian Language":
+        "Reading and writing involve understanding written information and expressing ideas clearly using the appropriate Ghanaian language."
+    };
+
     document.querySelector(".study-area").innerHTML = `
 
         <h3>📖 ${subject} Notes</h3>
@@ -313,12 +340,7 @@ function showNotes(subject,topic){
         </p>
 
         <p style="margin-top:12px;">
-            This section contains simple study notes to help you
-            understand the topic clearly.
-        </p>
-
-        <p style="margin-top:12px;">
-            Read the key points carefully and revise them regularly.
+            ${notes[subject]}
         </p>
 
         <button class="action"
@@ -327,7 +349,7 @@ function showNotes(subject,topic){
         </button>
 
     `;
-}
+    }
 
 
 </script>
