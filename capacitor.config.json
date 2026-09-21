@@ -1,0 +1,8 @@
+{
+  "appId": "com.studymategh.app",
+  "appName": "StudyMate GH",
+  "webDir": ".",
+  "server": {
+    "androidScheme": "https"
+  }
+}
