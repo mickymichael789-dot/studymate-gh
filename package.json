@@ -1,0 +1,16 @@
+{
+  "name": "studymate-gh",
+  "version": "1.0.0",
+  "description": "StudyMate GH - Student Learning App",
+  "private": true,
+  "scripts": {
+    "build": "echo StudyMate GH build ready"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/core": "^7.4.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3"
+  }
+}
