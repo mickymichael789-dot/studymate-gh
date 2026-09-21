@@ -534,7 +534,13 @@ function checkAnswer(selected,correct,subject,topic){
 
 
     if(selected === correct){
+progress.quizzesCompleted++;
 
+if(!progress.subjectsStudied.includes(subject)){
+    progress.subjectsStudied.push(subject);
+}
+
+saveProgress();
         result.innerHTML = `
 
             <div class="note-box">
