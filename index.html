@@ -328,7 +328,19 @@ function showJHS(){const savedName =
 
     document.getElementById("jhsBtn").classList.add("active");
     document.getElementById("shsBtn").classList.remove("active");
+if(savedName){
 
+    document.getElementById("studyArea").innerHTML = `
+
+        <h2>👋 Welcome, ${savedName}!</h2>
+
+        <p style="margin-top:10px;">
+            Ready to learn something new today?
+        </p>
+
+    `;
+
+    }
     displaySubjects(jhsSubjects);
 
 }
