@@ -302,7 +302,32 @@ function openSubject(subject,topic){
     `;
 
 }
+function showNotes(subject,topic){
 
+    document.querySelector(".study-area").innerHTML = `
+
+        <h3>📖 ${subject} Notes</h3>
+
+        <p style="margin-top:12px;">
+            <strong>Topic:</strong> ${topic}
+        </p>
+
+        <p style="margin-top:12px;">
+            This section contains simple study notes to help you
+            understand the topic clearly.
+        </p>
+
+        <p style="margin-top:12px;">
+            Read the key points carefully and revise them regularly.
+        </p>
+
+        <button class="action"
+        onclick="openSubject('${subject}','${topic}')">
+            ← Back to Topic
+        </button>
+
+    `;
+}
 
 
 </script>
