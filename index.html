@@ -323,7 +323,8 @@ const shsSubjects = [
 ];
 
 
-function showJHS(){
+function showJHS(){const savedName =
+    localStorage.getItem("studymateStudentName") || "";
 
     document.getElementById("jhsBtn").classList.add("active");
     document.getElementById("shsBtn").classList.remove("active");
