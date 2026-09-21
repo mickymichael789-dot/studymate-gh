@@ -685,7 +685,20 @@ progress.practiceCompleted++;
 if(!progress.subjectsStudied.includes(subject)){
     progress.subjectsStudied.push(subject);
 }
+function saveStudentName(){
 
+    const name = document.getElementById("studentName").value.trim();
+
+    if(name === ""){
+        alert("Please enter your name.");
+        return;
+    }
+
+    localStorage.setItem("studymateStudentName", name);
+
+    alert("Name saved successfully!");
+
+    }
 saveProgress();
     document.getElementById("studyArea").innerHTML = `
 
