@@ -320,37 +320,18 @@ const shsSubjects = [
 
 function showJHS(){
 
-    const savedName =
-        localStorage.getItem("studymateStudentName") || "";
-
     document.getElementById("jhsBtn").classList.add("active");
     document.getElementById("shsBtn").classList.remove("active");
 
-    if(savedName){
+    document.getElementById("studyArea").innerHTML = `
 
-        document.getElementById("studyArea").innerHTML = `
+        <h2>📖 Study Area</h2>
 
-            <h2>👋 Welcome, ${savedName}!</h2>
+        <p style="margin-top:10px;">
+            Select a subject below to begin learning.
+        </p>
 
-            <p style="margin-top:10px;">
-                Ready to learn something new today?
-            </p>
-
-        `;
-
-    }else{
-
-        document.getElementById("studyArea").innerHTML = `
-
-            <h2>📖 Study Area</h2>
-
-            <p style="margin-top:10px;">
-                Select a subject below to begin learning.
-            </p>
-
-        `;
-
-    }
+    `;
 
     displaySubjects(jhsSubjects);
 
