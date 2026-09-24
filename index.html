@@ -745,11 +745,64 @@ function showNotes(subject,topic){
 
     });
 
-
     let noteText = selected
         ? selected.notes
         : "Notes for this topic are coming soon.";
 
+    let examples = {
+
+        "Parts of Speech":
+        "Example: Ama is a teacher. Ama is a noun because it names a person. Teacher is also a noun.",
+
+        "Tenses":
+        "Example: Present: I eat rice. Past: I ate rice. Future: I will eat rice.",
+
+        "Algebra":
+        "Example: 2x + 4 = 10. Subtract 4 from both sides: 2x = 6. Divide by 2: x = 3.",
+
+        "Fractions":
+        "Example: 1/2 + 1/4 = 3/4.",
+
+        "Decimals":
+        "Example: 0.5 is equal to 1/2, while 0.25 is equal to 1/4.",
+
+        "Percentages":
+        "Example: 25% of 200 = 50.",
+
+        "Ratio and Proportion":
+        "Example: A ratio of 2:4 can be simplified to 1:2.",
+
+        "Linear Equations":
+        "Example: x + 5 = 12. Subtract 5 from both sides to get x = 7.",
+
+        "Geometry":
+        "Example: A rectangle with length 8 cm and width 4 cm has an area of 32 cm².",
+
+        "Statistics":
+        "Example: The numbers 2, 4, 6, 8 and 10 have a mean of 6.",
+
+        "Probability":
+        "Example: When a fair coin is tossed, the probability of getting heads is 1/2.",
+
+        "Living Things":
+        "Example: A plant grows, takes in nutrients, respires and reproduces. These are characteristics of living things.",
+
+        "Computer Basics":
+        "Example: A keyboard is an input device, while a monitor is an output device.",
+
+        "Moral Values":
+        "Example: Returning something that does not belong to you shows honesty.",
+
+        "Basic French":
+        "Example: Bonjour means Hello, Merci means Thank you, Oui means Yes and Non means No.",
+
+        "Reading and Writing":
+        "Example: Reading involves understanding written information, while writing involves expressing ideas using words and sentences."
+
+    };
+
+    let exampleText = examples[topic] ||
+        "Example: Think of a real-life situation where this topic can be applied and explain what you have learned.";
 
     document.getElementById("studyArea").innerHTML = `
 
@@ -760,7 +813,31 @@ function showNotes(subject,topic){
         </p>
 
         <div class="note-box">
-            ${noteText}
+
+            <h3>📚 Notes</h3>
+
+            <p style="margin-top:10px;">
+                ${noteText}
+            </p>
+
+            <h3 style="margin-top:20px;">
+                💡 Example
+            </h3>
+
+            <p style="margin-top:10px;">
+                ${exampleText}
+            </p>
+
+            <h3 style="margin-top:20px;">
+                ✅ Key Point
+            </h3>
+
+            <p style="margin-top:10px;">
+                Read the explanation carefully and try to explain the topic
+                in your own words. Practise using the example before moving
+                to the quiz.
+            </p>
+
         </div>
 
         <button class="action"
